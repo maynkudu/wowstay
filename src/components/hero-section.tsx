@@ -2,19 +2,22 @@
 
 import { motion } from "framer-motion"
 import SearchBar from "@/components/search-bar"
+import Image from "next/image"
 
 export default function HeroSection() {
   return (
     <div className="relative h-screen flex items-center justify-center">
       {/* Background Image */}
+      {/* <Image src={'https://i.pinimg.com/736x/e6/30/db/e630db9e931df9ea09a6090cf5dbfa89.jpg'} fill alt="hotel"/> */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat antialiased"
         style={{
-          backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
+          backgroundImage: "url('https://i.pinimg.com/736x/e6/30/db/e630db9e931df9ea09a6090cf5dbfa89.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        <div className="absolute inset-0 bg-black opacity-40" />
       </div>
+
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">

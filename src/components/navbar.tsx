@@ -12,7 +12,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 900)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -20,14 +20,16 @@ export default function Navbar() {
   }, [])
 
   return (
-    <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
-      animate={{
-        backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0)",
-        backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
-      }}
+    <nav
+      className={`
+    fixed top-0 left-0 right-0 z-50 px-4 py-4 
+    transition-all duration-700 ease-in-out
+    ${isScrolled
+          ? 'bg-white/30 backdrop-blur-xl border-b border-black/30'
+          : 'bg-transparent backdrop-blur-0 border-b border-transparent'}
+  `}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-[100rem] mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <motion.div
             className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center"
@@ -42,25 +44,23 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-8">
           <Link
             href="/hotels"
-            className={`font-medium hover:text-blue-600 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
-            }`}
+            className={`font-medium transition-colors duration-700 hover:text-blue-600 ${isScrolled ? "text-gray-700" : "text-white"
+              }`}
           >
             Hotels
           </Link>
+
           <Link
             href="/about"
-            className={`font-medium hover:text-blue-600 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
-            }`}
+            className={`font-medium transition-colors duration-700 hover:text-blue-600 ${isScrolled ? "text-gray-700" : "text-white"
+              }`}
           >
             About
           </Link>
           <Link
             href="/contact"
-            className={`font-medium hover:text-blue-600 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
-            }`}
+            className={`font-medium transition-colors duration-700 hover:text-blue-600 ${isScrolled ? "text-gray-700" : "text-white"
+              }`}
           >
             Contact
           </Link>
@@ -103,6 +103,6 @@ export default function Navbar() {
           </div>
         </motion.div>
       )}
-    </motion.nav>
+    </nav>
   )
 }
