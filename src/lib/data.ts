@@ -1,0 +1,148 @@
+import type { Hotel } from "./types"
+
+export const hotels: Hotel[] = [
+  {
+    id: "1",
+    name: "Grand Palace Resort",
+    location: "Bali, Indonesia",
+    description:
+      "Experience luxury at its finest with our oceanfront resort featuring private beaches, world-class spa services, and exquisite dining options. Perfect for romantic getaways and family vacations.",
+    pricePerNight: 299,
+    rating: 4.8,
+    reviews: 1247,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Parking", "Restaurant", "Pool", "Spa", "Beach Access", "Room Service"],
+    coordinates: { lat: -8.3405, lng: 115.092 },
+  },
+  {
+    id: "2",
+    name: "Mountain View Lodge",
+    location: "Aspen, Colorado",
+    description:
+      "Nestled in the heart of the Rocky Mountains, our cozy lodge offers breathtaking views, world-class skiing, and rustic luxury. Perfect for adventure seekers and nature lovers.",
+    pricePerNight: 450,
+    rating: 4.9,
+    reviews: 892,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Parking", "Restaurant", "Ski Access", "Fireplace", "Hot Tub", "Concierge"],
+    coordinates: { lat: 39.1911, lng: -106.8175 },
+  },
+  {
+    id: "3",
+    name: "Urban Boutique Hotel",
+    location: "New York City, NY",
+    description:
+      "Modern sophistication meets classic New York charm in our boutique hotel. Located in the heart of Manhattan with easy access to Broadway, shopping, and fine dining.",
+    pricePerNight: 380,
+    rating: 4.6,
+    reviews: 2156,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Restaurant", "Fitness Center", "Business Center", "Rooftop Bar", "Concierge"],
+    coordinates: { lat: 40.7589, lng: -73.9851 },
+  },
+  {
+    id: "4",
+    name: "Seaside Paradise Resort",
+    location: "Maldives",
+    description:
+      "Overwater villas and pristine beaches await you at our exclusive resort. Enjoy crystal-clear waters, world-class diving, and unparalleled luxury in this tropical paradise.",
+    pricePerNight: 850,
+    rating: 4.9,
+    reviews: 743,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Restaurant", "Spa", "Water Sports", "Private Beach", "Butler Service", "Diving Center"],
+    coordinates: { lat: 3.2028, lng: 73.2207 },
+  },
+  {
+    id: "5",
+    name: "Historic Castle Hotel",
+    location: "Edinburgh, Scotland",
+    description:
+      "Step back in time in our beautifully restored 16th-century castle. Experience royal treatment with modern amenities while surrounded by centuries of history and stunning architecture.",
+    pricePerNight: 520,
+    rating: 4.7,
+    reviews: 1089,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Parking", "Restaurant", "Bar", "Gardens", "Historical Tours", "Library"],
+    coordinates: { lat: 55.9533, lng: -3.1883 },
+  },
+  {
+    id: "6",
+    name: "Desert Oasis Resort",
+    location: "Dubai, UAE",
+    description:
+      "Experience Arabian luxury in our desert resort featuring traditional architecture, modern amenities, and spectacular views of the Dubai skyline. Perfect for business and leisure travelers.",
+    pricePerNight: 420,
+    rating: 4.8,
+    reviews: 1567,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Parking", "Restaurant", "Pool", "Spa", "Golf Course", "Shopping Mall Access"],
+    coordinates: { lat: 25.2048, lng: 55.2708 },
+  },
+  {
+    id: "7",
+    name: "Tropical Beach Resort",
+    location: "Phuket, Thailand",
+    description:
+      "Relax on pristine beaches and enjoy authentic Thai hospitality at our beachfront resort. Features traditional Thai architecture, multiple pools, and award-winning restaurants.",
+    pricePerNight: 180,
+    rating: 4.5,
+    reviews: 2234,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Parking", "Restaurant", "Pool", "Beach Access", "Spa", "Water Sports"],
+    coordinates: { lat: 7.8804, lng: 98.3923 },
+  },
+  {
+    id: "8",
+    name: "Alpine Wellness Retreat",
+    location: "Swiss Alps, Switzerland",
+    description:
+      "Rejuvenate your mind and body in our wellness-focused mountain retreat. Featuring holistic spa treatments, organic cuisine, and breathtaking alpine views.",
+    pricePerNight: 680,
+    rating: 4.9,
+    reviews: 456,
+    images: [
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+      "/placeholder.svg?height=400&width=600",
+    ],
+    amenities: ["Free WiFi", "Parking", "Restaurant", "Spa", "Wellness Center", "Hiking Trails", "Yoga Studio"],
+    coordinates: { lat: 46.5197, lng: 7.9586 },
+  },
+]
