@@ -1,10 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Poppins } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
+import LenisProvider from "@/providers/lenis-provider"
 
 const inter = Inter({ subsets: ["latin"] })
+
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: '--font-poppins',
+  subsets: ['devanagari']
+})
 
 const nevrada = localFont({
   src: [
@@ -37,8 +44,7 @@ const vonique = localFont({
     },
     {
       path: './fonts/VoniqueBold.ttf',
-      weight: '600',
-      style: 'normal'
+      weight: '600'
     }
   ],
   variable: '--font-vonique'
@@ -57,7 +63,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${nevrada.variable} ${themunday.variable} ${vonique.variable}`}>{children}</body>
+      <body className={`${inter.className} ${nevrada.variable} ${themunday.variable} ${vonique.variable} ${poppins.variable}`}>
+        <LenisProvider>
+          {children}
+        </LenisProvider>
+      </body>
     </html>
   )
 }

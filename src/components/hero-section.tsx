@@ -12,10 +12,10 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat antialiased"
         style={{
-          backgroundImage: "url('https://i.pinimg.com/736x/e6/30/db/e630db9e931df9ea09a6090cf5dbfa89.jpg')",
+          backgroundImage: "url('https://media.wowstays.org/hero.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-40" />
+        <div className="absolute inset-0 bg-black opacity-60" />
       </div>
 
 
@@ -25,7 +25,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold mb-6"
+          className="text-5xl md:text-7xl mb-6 font-vonique font-poppins"
         >
           Find Your Perfect
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">

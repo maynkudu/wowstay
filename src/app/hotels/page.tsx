@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { hotels } from "@/lib/data"
 import type { Hotel } from "@/lib/types"
 import HotelCard from "@/components/hotel-card"
-import SearchFilters from "@/components/search-filter"
+import SearchFilters from "@/components/search-filters"
 import Navbar from "@/components/navbar"
 
 function HotelsContent() {
