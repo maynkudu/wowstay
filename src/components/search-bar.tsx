@@ -260,26 +260,6 @@ export default function SearchBar() {
             </motion.div>
           </div>
         </div>
-
-        <style jsx>{`
-        .mask-gradient {
-          mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            black 20%,
-            black 80%,
-            transparent 100%
-          );
-          -webkit-mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%
-          );
-        }
-      `}</style>
-
         {/* Search Button */}
         <div className="mt-2 text-center flex-1/3">
           <Button
