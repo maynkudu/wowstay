@@ -2,6 +2,7 @@
 import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
 import FeaturedHotels from "@/components/featured-hotels"
+import Footer from "@/components/footer"
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <FeaturedHotels />
+      <Footer />
     </div>
   )
 }

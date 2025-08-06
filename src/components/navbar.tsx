@@ -5,10 +5,14 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { MapPin, User, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useAuth } from "@/context/auth-context"
+import UserMenu from "./auth/user-menu"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const { user } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,10 +68,16 @@ export default function Navbar() {
           >
             Contact
           </Link>
-          <Button variant={isScrolled ? "default" : "secondary"} size="sm">
-            <User className="w-4 h-4 mr-2" />
-            Sign In
-          </Button>
+          {user ? (
+            <UserMenu />
+          ) : (
+            <Link href="/login">
+              <Button variant={isScrolled ? "default" : "secondary"} size="sm">
+                <User className="w-4 h-4 mr-2" />
+                Sign In
+              </Button>
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}

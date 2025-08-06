@@ -4,6 +4,7 @@ import { Inter, Poppins } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
 import LenisProvider from "@/providers/lenis-provider"
+import { AuthProvider } from "@/context/auth-context"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -64,9 +65,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${nevrada.variable} ${themunday.variable} ${vonique.variable} ${poppins.variable}`}>
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+        <AuthProvider>
+          <LenisProvider>
+            {children}
+          </LenisProvider>
+        </AuthProvider>
       </body>
     </html>
   )

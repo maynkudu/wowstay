@@ -25,14 +25,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl mb-6 font-vonique font-poppins"
+          className="text-5xl md:text-7xl mb-6 font-poppins"
         >
           Find Your Perfect
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
             WowStay
           </span>
         </motion.h1>
-
+{/* 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,12 +40,12 @@ export default function HeroSection() {
           className="text-xl md:text-2xl mb-12 text-gray-200"
         >
           Discover amazing hotels and resorts around the world
-        </motion.p>
+        </motion.p> */}
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          // initial={{ opacity: 0, y: 30 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, delay: 0.4 }}
         >
           <SearchBar />
         </motion.div>
