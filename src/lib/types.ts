@@ -30,3 +30,11 @@ export interface BookingData {
   guests: number
   totalPrice: number
 }
+
+export interface Account {
+  first_name: string
+  last_name: string
+  phone: string
+  avatar_url:string
+  updated_at: Date
+}

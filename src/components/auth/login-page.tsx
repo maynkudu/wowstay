@@ -4,17 +4,19 @@ import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Mail, Chrome, ArrowLeft, Sparkles, Lock, Eye, EyeOff, User } from 'lucide-react'
+import { Mail, Chrome, ArrowLeft, Sparkles, Lock, Eye, EyeOff, User, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useAuth } from '@/context/auth-context'
 
-export default function LoginForm() {
+export default function LoginPage() {
     const [mode, setMode] = useState<'signin' | 'signup'>('signin')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [fullName, setFullName] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [phone, setPhone] = useState('')
     const [showPassword, setShowPassword] = useState(false)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
@@ -41,7 +43,12 @@ export default function LoginForm() {
             if (mode === 'signin') {
                 result = await signIn(email, password)
             } else {
-                result = await signUp(email, password, fullName)
+                // For signup, pass the additional account data
+                result = await signUp(email, password, {
+                    firstName,
+                    lastName,
+                    phone,
+                })
             }
 
             if (result.error) {
@@ -51,6 +58,9 @@ export default function LoginForm() {
                 // Show success message for signup
                 setMode('signin')
                 setPassword('')
+                setFirstName('')
+                setLastName('')
+                setPhone('')
                 setError('Account created successfully! Please sign in.')
             }
         } catch (err) {
@@ -74,7 +84,9 @@ export default function LoginForm() {
     const resetForm = () => {
         setEmail('')
         setPassword('')
-        setFullName('')
+        setFirstName('')
+        setLastName('')
+        setPhone('')
         setError('')
     }
 
@@ -160,8 +172,8 @@ export default function LoginForm() {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             className={`px-4 py-3 rounded-2xl mb-6 text-center ${error.includes('successfully')
-                                ? 'bg-green-50 border border-green-200 text-green-700'
-                                : 'bg-red-50 border border-red-200 text-red-700'
+                                    ? 'bg-green-50 border border-green-200 text-green-700'
+                                    : 'bg-red-50 border border-red-200 text-red-700'
                                 }`}
                         >
                             {error}
@@ -203,23 +215,62 @@ export default function LoginForm() {
                         {/* Email/Password Form */}
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {mode === 'signup' && (
-                                <div>
-                                    <Label htmlFor="fullName" className="text-sm font-semibold text-gray-700 mb-3 block">
-                                        Full Name
-                                    </Label>
-                                    <div className="relative">
-                                        <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                                        <Input
-                                            id="fullName"
-                                            type="text"
-                                            placeholder="Enter your full name"
-                                            value={fullName}
-                                            onChange={(e) => setFullName(e.target.value)}
-                                            required
-                                            className="pl-12 h-14 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-400 focus:bg-blue-50/50 transition-all duration-300"
-                                        />
+                                <>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <Label htmlFor="firstName" className="text-sm font-semibold text-gray-700 mb-3 block">
+                                                First Name
+                                            </Label>
+                                            <div className="relative">
+                                                <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                                                <Input
+                                                    id="firstName"
+                                                    type="text"
+                                                    placeholder="First name"
+                                                    value={firstName}
+                                                    onChange={(e) => setFirstName(e.target.value)}
+                                                    required
+                                                    className="pl-12 h-14 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-400 focus:bg-blue-50/50 transition-all duration-300"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <Label htmlFor="lastName" className="text-sm font-semibold text-gray-700 mb-3 block">
+                                                Last Name
+                                            </Label>
+                                            <div className="relative">
+                                                <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                                                <Input
+                                                    id="lastName"
+                                                    type="text"
+                                                    placeholder="Last name"
+                                                    value={lastName}
+                                                    onChange={(e) => setLastName(e.target.value)}
+                                                    required
+                                                    className="pl-12 h-14 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-400 focus:bg-blue-50/50 transition-all duration-300"
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+
+                                    <div>
+                                        <Label htmlFor="phone" className="text-sm font-semibold text-gray-700 mb-3 block">
+                                            Phone Number <span className="text-gray-400 font-normal">(Optional)</span>
+                                        </Label>
+                                        <div className="relative">
+                                            <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                                            <Input
+                                                id="phone"
+                                                type="tel"
+                                                placeholder="Enter your phone number"
+                                                value={phone}
+                                                onChange={(e) => setPhone(e.target.value)}
+                                                className="pl-12 h-14 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-400 focus:bg-blue-50/50 transition-all duration-300"
+                                            />
+                                        </div>
+                                    </div>
+                                </>
                             )}
 
                             <div>
