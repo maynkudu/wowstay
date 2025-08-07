@@ -31,7 +31,7 @@ export default function BookingPanel({ hotel }: BookingPanelProps) {
     return 1
   }
 
-  const totalPrice = hotel.pricePerNight * nights
+  const totalPrice = hotel.pricing.pricePerNight * nights
   const taxes = totalPrice * 0.12
   const finalTotal = totalPrice + taxes
 
@@ -107,7 +107,7 @@ export default function BookingPanel({ hotel }: BookingPanelProps) {
           <div className="border-t pt-4 space-y-2">
             <div className="flex justify-between text-gray-600">
               <span>
-                ${hotel.pricePerNight} × {nights} nights
+                ${hotel.pricing.pricePerNight} × {nights} nights
               </span>
               <span>${totalPrice}</span>
             </div>
